@@ -4,7 +4,11 @@
 
 =======================
 
+
+
+
 Python library for interfacing with a MPR121 capacitive touch sensor on the Raspberry Pi, BeagleBone Black, etc.
+
 
 Designed specifically to work with the Adafruit MPR121 capacitive touch sensor ----> https://www.adafruit.com/product/1982
 
