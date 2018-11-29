@@ -1,4 +1,4 @@
-Adafruit Python MPR121
+Adafruit Python MPR121  (Tweaked for use with conductive paint)
 =======================
 
 Python library for interfacing with a MPR121 capacitive touch sensor on the Raspberry Pi, BeagleBone Black, etc.
