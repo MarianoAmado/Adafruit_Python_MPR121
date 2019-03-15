@@ -71,15 +71,15 @@ class MPR121(object):
         pass
 
     def begin(self, address=MPR121_I2CADDR_DEFAULT, i2c=None, **kwargs):
-        """Initialize communication with the MPR121. 
+        """Initialize communication with the MPR121.
 
-        Can specify a custom I2C address for the device using the address 
-        parameter (defaults to 0x5A). Optional i2c parameter allows specifying a 
+        Can specify a custom I2C address for the device using the address
+        parameter (defaults to 0x5A). Optional i2c parameter allows specifying a
         custom I2C bus source (defaults to platform's I2C bus).
 
         Returns True if communication with the MPR121 was established, otherwise
         returns False.
-        """        
+        """
         # Assume we're using platform's default I2C bus if none is specified.
         if i2c is None:
             import Adafruit_GPIO.I2C as I2C
@@ -118,8 +118,8 @@ class MPR121(object):
         self._i2c_retry(self._device.write8, MPR121_FDLT, 0x00)
         # Set other configuration registers.
         self._i2c_retry(self._device.write8, MPR121_DEBOUNCE, 0)
-        self._i2c_retry(self._device.write8, MPR121_CONFIG1, 0x10) # default, 16uA charge current
-        self._i2c_retry(self._device.write8, MPR121_CONFIG2, 0x20) # 0.5uS encoding, 1ms period
+        self._i2c_retry(self._device.write8, MPR121_CONFIG1, 0x20) #  32uA charge current
+        self._i2c_retry(self._device.write8, MPR121_CONFIG2, 0x3A) # 0.5uS encoding,18 samples, 4ms period
         # Enable all electrodes.
         self._i2c_retry(self._device.write8, MPR121_ECR, 0x8F) # start with first 5 bits of baseline tracking
         # All done, everything succeeded!
@@ -173,7 +173,7 @@ class MPR121(object):
         return bl << 2
 
     def touched(self):
-        """Return touch state of all pins as a 12-bit value where each bit 
+        """Return touch state of all pins as a 12-bit value where each bit
         represents a pin, with a value of 1 being touched and 0 not being touched.
         """
         t = self._i2c_retry(self._device.readU16LE, MPR121_TOUCHSTATUS_L)
