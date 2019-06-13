@@ -7,7 +7,7 @@
 	sudo apt-get update
     sudo apt-get install build-essential python-dev python-smbus python-pip git
   *----> git clone https://github.com/adafruit/Adafruit_Python_MPR121.git
-    sudo python setup.py install
+    sudo python setup.py develop
 
 # Fix for I2C driver:
 	 Add to /boot/config.txt: dtoverlay=i2c-bcm2708
