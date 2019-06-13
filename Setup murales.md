@@ -6,7 +6,7 @@
 # Install library (FORK!) (and copy files):
 	sudo apt-get update
     sudo apt-get install build-essential python-dev python-smbus python-pip git
-  *----> git clone https://github.com/adafruit/Adafruit_Python_MPR121.git
+    git clone https://github.com/MarianoAmado/Adafruit_Python_MPR121.git
     sudo python setup.py develop
 
 # Fix for I2C driver:
