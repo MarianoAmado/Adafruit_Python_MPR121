@@ -17,7 +17,7 @@
 
 >modificar sensibilidad: MPR121.py (line 106)
 
-#Add to /boot/config.txt :
+# Add to /boot/config.txt :
 	dtoverlay=i2c-bcm2708  #i2c driver Fix.
 	dtoverlay=pwm-2chan,pin=18,func=2,pin2=13,func2=4  #PWM Audio output (gpio 18 & 13).
 	dtoverlay=gpio-shutdown,gpio_pin=5  #Shutdown button pin.
