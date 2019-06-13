@@ -25,9 +25,9 @@
 	sudo systemctl start TOCA.service
 	systemctl status TOCA.service
 
-# MPR121 and Audio PCB C:
+# MPR121 and Audio PCB
 
-*------>
+*------> changes:
 
 	self._i2c_retry(self._device.write8, MPR121_CONFIG1, 0x20) 
 	self._i2c_retry(self._device.write8, MPR121_CONFIG2, 0x3A)				   
