@@ -24,16 +24,18 @@
 
 # Execute on start:
 	sudo nano /etc/systemd/system/TOCA.service
-		[Unit]
-		Description=Servicio TOCA murales
-		After=multi-user.target
+	-
+	[Unit]
+	Description=Servicio TOCA murales
+	After=multi-user.target
 
-		[Service]
-		Type=idle
-		ExecStart=/usr/bin/python /home/pi/myscript.py
+	[Service]
+	Type=idle
+	ExecStart=/usr/bin/python /home/pi/myscript.py
 
-		[Install]
-		WantedBy=multi-user.target
+	[Install]
+	WantedBy=multi-user.target
+	-
 
 	sudo systemctl enable TOCA.service
 	sudo systemctl start TOCA.service
